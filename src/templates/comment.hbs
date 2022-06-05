@@ -1,0 +1,32 @@
+<div class="vac-comment" data-id="{{id}}">
+  <div class="vac-comment-header">
+    <div class="vac-author-name">
+        {{meta.user_name}} 
+        <span>
+            {{timeSince}}            
+            {{!-- <div class="vac-timestamp">
+                <span class="vac-delete-comment">&nbsp;&nbsp;X</span>
+            </div> --}}
+        </span>        
+        <span class="box-del">...</span>
+            <div class="handle-box">
+                <span class="vac-delete-comment">حذف</span>
+                <span class="vac-edit-comment">تعديل</span>
+            </div>
+    </div>        
+  </div>
+  <div class="vac-comment-body">
+    {{breaklines body}}
+    <div class="action-comment">
+        <span class="vac-like-comment">
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 0
+        </span>
+        <span class="vac-reply-comment">
+            <i class="fa fa-reply" aria-hidden="true"></i>رد
+        </span>
+        
+
+    </div>
+  </div>
+  
+</div>

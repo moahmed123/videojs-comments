@@ -1,0 +1,53 @@
+{{#unless adding}}
+{{#if showControls}}
+<div class="vac-controls vac-control">
+    <button class="vac-button">+ اضف تعليق</button>
+    <!--
+    {{#if showNav}}
+    <div class="vac-annotation-nav">
+        <div class="vac-a-prev">Prev</div>
+        <div class="vac-a-next">Next</div>
+    </div>
+    {{/if}}
+    -->
+</div>
+{{/if}}
+{{/unless}}
+
+{{#if adding}}
+<div class="vac-video-cover vac-control">
+    <div class="vac-video-cover-canvas">
+        <div class="vac-cursor-tool-tip vac-hidden">انقر واسحب للتحديد</div>
+    </div>
+</div>
+{{#if showControls}}
+<div class="vac-add-controls vac-control">
+    <i>حدد الشكل + النطاق</i>
+    {{#if internalCommenting}}
+    <button class="vac-button">استمر</button>
+    <a>cancel</a>
+    {{/if}}
+    <div class="vac-video-move">
+        <div class="vac-a-prev">-1 ثانية</div>
+        <div class="vac-a-next">+1 ثانية</div>
+    </div>
+</div>
+{{/if}}
+
+{{#if writingComment}}
+<div class="vac-video-write-new-wrap vac-control">
+    <div class="vac-video-write-new vac-is-annotation">
+        <div>
+            <h5><b>تعليق توضيحي جديد</b> @ {{rangeStr}}</h5>
+            <div class="vac-comment-showbox">
+                <textarea placeholder="اكتب هنا ..."></textarea>
+                <div>
+                    <button class="vac-button">حفظ</button>
+                    {{!-- <a>Cancel</a> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
+{{/if}}
