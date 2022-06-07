@@ -15,6 +15,7 @@ module.exports = class Comment extends PlayerUIComponent {
     this.id = data.id || this.componentId;
     this.meta = data.meta;
     this.body = data.body;
+    this.reply = data.reply;
     this.timestamp = moment(data.meta.datetime).unix();
     this.timeSince = this.timeSince();
 
@@ -26,7 +27,8 @@ module.exports = class Comment extends PlayerUIComponent {
     return {
       id: this.id,
       meta: this.meta,
-      body: this.body
+      body: this.body,
+      reply: this.reply
     };
   }
 
@@ -39,6 +41,7 @@ module.exports = class Comment extends PlayerUIComponent {
       id: this.id,
       body: this.body,
       meta: this.meta,
+      reply: this.reply,
       timeSince: this.timeSince
     });
   }

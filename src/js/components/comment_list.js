@@ -46,13 +46,25 @@ module.exports = class CommentList extends PlayerUIComponent {
         'click.vac-comment',
         '.box-del', this.toggleToShow.bind(this)
        
-      );
+      ).on(
+        'click.vac-comment',
+        '.vac-reply-comment', this.toggleToShowReply.bind(this)
+       
+      )
   }
 
   // eslint-disable-next-line class-methods-use-this
   toggleToShow(event){
     const targetToggle = $(event.currentTarget);            
     targetToggle.next().toggleClass('show')
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  toggleToShowReply(event){
+    const targetToggleReply = $(event.currentTarget);            
+    targetToggleReply.toggleClass('show-reply')
+    targetToggleReply.parents('.vac-comment-body').next().toggleClass('show')
+    
   }
 
   // Bind event listeners for new comments form

@@ -1,7 +1,20 @@
 var Handlebars = require("handlebars/runtime");
  exports["templates"] = exports["templates"] || {};
-exports["templates"]["comment"] = Handlebars.template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+exports["templates"]["comment"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "                <div class=\"vac-comment-header\">\n                    <div class=\"vac-author-name\">\n                        "
+    + ((stack1 = container.lambda(((stack1 = (depth0 != null ? lookupProperty(depth0,"meta") : depth0)) != null ? lookupProperty(stack1,"user_name") : stack1), depth0)) != null ? stack1 : "")
+    + "                       \n                    </div>\n                </div>  \n                <div class=\"vac-comment-body\">\n                    "
+    + container.escapeExpression((lookupProperty(helpers,"breaklines")||(depth0 && lookupProperty(depth0,"breaklines"))||container.hooks.helperMissing).call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"body") : depth0),{"name":"breaklines","hash":{},"data":data,"loc":{"start":{"line":47,"column":20},"end":{"line":47,"column":39}}}))
+    + " \n                </div>                     \n";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, alias5=container.lambda, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
@@ -10,13 +23,17 @@ exports["templates"]["comment"] = Handlebars.template({"compiler":[8,">= 4.3.0"]
 
   return "<div class=\"vac-comment\" data-id=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":1,"column":34},"end":{"line":1,"column":40}}}) : helper)))
-    + "\">\n  <div class=\"vac-comment-header\">\n    <div class=\"vac-author-name\">\n        "
-    + alias4(container.lambda(((stack1 = (depth0 != null ? lookupProperty(depth0,"meta") : depth0)) != null ? lookupProperty(stack1,"user_name") : stack1), depth0))
-    + " \n        <span>\n            "
-    + alias4(((helper = (helper = lookupProperty(helpers,"timeSince") || (depth0 != null ? lookupProperty(depth0,"timeSince") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"timeSince","hash":{},"data":data,"loc":{"start":{"line":6,"column":12},"end":{"line":6,"column":25}}}) : helper)))
-    + "            \n        </span>        \n        <span class=\"box-del\">...</span>\n            <div class=\"handle-box\">\n                <span class=\"vac-delete-comment\">حذف</span>\n                <span class=\"vac-edit-comment\">تعديل</span>\n            </div>\n    </div>        \n  </div>\n  <div class=\"vac-comment-body\">\n    "
-    + alias4((lookupProperty(helpers,"breaklines")||(depth0 && lookupProperty(depth0,"breaklines"))||alias2).call(alias1,(depth0 != null ? lookupProperty(depth0,"body") : depth0),{"name":"breaklines","hash":{},"data":data,"loc":{"start":{"line":19,"column":4},"end":{"line":19,"column":23}}}))
-    + "\n    <div class=\"action-comment\">\n        <span class=\"vac-like-comment\">\n            <i class=\"fa fa-thumbs-o-up\" aria-hidden=\"true\"></i> 0\n        </span>\n        <span class=\"vac-reply-comment\">\n            <i class=\"fa fa-reply\" aria-hidden=\"true\"></i>رد\n        </span>\n        \n\n    </div>\n  </div>\n  \n</div>\n";
+    + "\">\n    <div class=\"vac-comment-header\">\n        <div class=\"vac-author-name\">\n            "
+    + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"meta") : depth0)) != null ? lookupProperty(stack1,"user_name") : stack1), depth0))
+    + "\n            <span>\n                "
+    + alias4(((helper = (helper = lookupProperty(helpers,"timeSince") || (depth0 != null ? lookupProperty(depth0,"timeSince") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"timeSince","hash":{},"data":data,"loc":{"start":{"line":6,"column":16},"end":{"line":6,"column":29}}}) : helper)))
+    + "\n            </span>\n            <span class=\"box-del\">...</span>\n            <div class=\"handle-box\">\n                <span class=\"vac-delete-comment\">حذف</span>\n                <span class=\"vac-edit-comment\">تعديل</span>\n            </div>\n        </div>\n    </div>\n    <div class=\"vac-comment-body\">\n        "
+    + alias4((lookupProperty(helpers,"breaklines")||(depth0 && lookupProperty(depth0,"breaklines"))||alias2).call(alias1,(depth0 != null ? lookupProperty(depth0,"body") : depth0),{"name":"breaklines","hash":{},"data":data,"loc":{"start":{"line":19,"column":8},"end":{"line":19,"column":27}}}))
+    + "        \n        <div class=\"action-comment\">\n            <span class=\"vac-reply-comment\">\n                <i class=\"fa fa-reply\" aria-hidden=\"true\"></i>رد             \n            </span>\n        </div>\n         <div class=\"action-comment\">\n            <span class=\"vac-reply-comment reply-text\">\n                <i class=\"fa fa-sort-desc\" aria-hidden=\"true\"></i>\n                <span class=\"show-reply\">عرض</span>\n                <span class=\"hidden-reply\">اخفاء</span>\n                \n                <span>\n                     "
+    + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"reply") : depth0)) != null ? lookupProperty(stack1,"length") : stack1), depth0))
+    + "\n                </span>\n                ردود\n            </span>\n        </div>       \n    </div>\n     <!-- reply -->              \n        <div class=\"reply\">\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"reply") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":40,"column":12},"end":{"line":49,"column":21}}})) != null ? stack1 : "")
+    + "            <div class=\"vac-video-write-new-wrap-replay vac-new-commen-replay\">\n                <div class=\"vac-video-write-new-replay vac-is-comment-replay\">\n                    <div class=\"vac-comment-replay-showbox\">\n                        <textarea placeholder=\"اكتب رد هنا\"></textarea>\n                        <div>\n                            <button class=\"vac-button-replay\">حفظ</button>                        \n                        </div>\n                    </div>\n                </div>\n            </div> \n        </div> \n        <!-- End Reply -->                \n\n</div>";
 },"useData":true});
 exports["templates"]["comment_list"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data,blockParams) {
     var stack1;
@@ -25,17 +42,21 @@ exports["templates"]["comment_list"] = Handlebars.template({"1":function(contain
     + ((stack1 = container.lambda(blockParams[0][0], depth0)) != null ? stack1 : "")
     + "\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data,blockParams) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), lookupProperty = container.lookupProperty || function(parent, propertyName) {
+    var stack1, helper, alias1=container.escapeExpression, alias2=depth0 != null ? depth0 : (container.nullContext || {}), alias3=container.hooks.helperMissing, alias4="function", lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
         return undefined
     };
 
-  return "<div class=\"vac-comments-container\">\n  <div class=\"vac-comments-wrap\">\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"commentsHTML") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 1, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams,"loc":{"start":{"line":3,"column":4},"end":{"line":5,"column":13}}})) != null ? stack1 : "")
+  return "<div class=\"vac-comments-container\">\n    <div class=\"count-comment\">\n        <p> \n            "
+    + alias1(container.lambda(((stack1 = (depth0 != null ? lookupProperty(depth0,"commentsHTML") : depth0)) != null ? lookupProperty(stack1,"length") : stack1), depth0))
+    + "\n            تعليق\n        </p>\n        <span>\n            "
+    + alias1(((helper = (helper = lookupProperty(helpers,"rangeStr") || (depth0 != null ? lookupProperty(depth0,"rangeStr") : depth0)) != null ? helper : alias3),(typeof helper === alias4 ? helper.call(alias2,{"name":"rangeStr","hash":{},"data":data,"blockParams":blockParams,"loc":{"start":{"line":8,"column":12},"end":{"line":8,"column":24}}}) : helper)))
+    + "\n        </span>\n    </div>\n  <div class=\"vac-comments-wrap\">\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(alias2,(depth0 != null ? lookupProperty(depth0,"commentsHTML") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 1, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams,"loc":{"start":{"line":12,"column":4},"end":{"line":14,"column":13}}})) != null ? stack1 : "")
     + "    <div class=\"vac-reply-btn vac-button\">ADD REPLY</div>\n    <div class=\"vac-add-new-shapebox\"></div>\n  </div>\n  <div class=\"vac-comments-control-bar\">\n    <div class=\"vac-range\"><b>@</b> "
-    + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"rangeStr") || (depth0 != null ? lookupProperty(depth0,"rangeStr") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"rangeStr","hash":{},"data":data,"blockParams":blockParams,"loc":{"start":{"line":10,"column":36},"end":{"line":10,"column":48}}}) : helper)))
+    + alias1(((helper = (helper = lookupProperty(helpers,"rangeStr") || (depth0 != null ? lookupProperty(depth0,"rangeStr") : depth0)) != null ? helper : alias3),(typeof helper === alias4 ? helper.call(alias2,{"name":"rangeStr","hash":{},"data":data,"blockParams":blockParams,"loc":{"start":{"line":19,"column":36},"end":{"line":19,"column":48}}}) : helper)))
     + "</div>\n    <div class=\"vac-control-buttons\">\n      <a class=\"vac-delete-annotation\">DELETE</a> | <a class=\"vac-close-comment-list\">CLOSE</a>\n    </div>\n  </div>\n</div>\n";
 },"useData":true,"useBlockParams":true});
 exports["templates"]["controls"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {

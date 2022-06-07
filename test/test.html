@@ -6,9 +6,41 @@
     <link href="assets/videojs_skin.css" rel="stylesheet" />
     <link href="assets/page.css" rel="stylesheet" />
     <link href="assets/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/annotations.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link href="css/annotations.css" rel="stylesheet" />   
+    <style>
+        @font-face {
+            font-family: 'IBMPlex';
+            src: url('./fonts/IBM-Plex-Sans-Arabic/IBMPlexSansArabic-Bold.otf');
+        }
+        @font-face {
+            font-family: 'IBMPlexExtraLight';
+            src: url('./fonts/IBM-Plex-Sans-Arabic/IBMPlexSansArabic-ExtraLight.otf');
+        }
+        @font-face {
+            font-family: 'IBMPlexLight';
+            src: url('./fonts/IBM-Plex-Sans-Arabic/IBMPlexSansArabic-Light.otf');
+        }
+        @font-face {
+            font-family: 'IBMPlexMedium';
+            src: url('./fonts/IBM-Plex-Sans-Arabic/IBMPlexSansArabic-Medium.otf');
+        }
+        @font-face {
+            font-family: 'IBMPlexRegular';
+            src: url('./fonts/IBM-Plex-Sans-Arabic/IBMPlexSansArabic-Regular.otf');
+        }
+        @font-face {
+            font-family: 'IBMPlexSemiBold';
+            src: url('./fonts/IBM-Plex-Sans-Arabic//IBMPlexSansArabic-SemiBold.otf');
+        }
+        @font-face {
+            font-family: 'IBMPlexText';
+            src: url('./fonts/IBM-Plex-Sans-Arabic/IBMPlexSansArabic-Text.otf');
+        }
+        @font-face {
+            font-family: 'IBMPlexThin';
+            src: url('./fonts/IBM-Plex-Sans-Arabic/IBMPlexSansArabic-Thin.otf');
+        }
+    </style>
     <script>
       function guid() {
         function s4() {
@@ -83,10 +115,10 @@
               meta: {
                 datetime: "2017-03-29T00:18:25.485Z",
                 user_id: 1,
-                user_name: "Jack Pope"
+                user_name: "محمود فرح"
               },
               body:
-                "Great idea Evan, that's a SUPER recognizable brand!\n\nAny other major company brands we are missing in this shot?"
+              "النص هنا  النص هنا  النص هنا النص هنا النص هنا النص هنا النص هنا "
             }
           ]
         },
@@ -102,10 +134,11 @@
               meta: {
                 datetime: "2017-03-28T19:21:41.351Z",
                 user_id: 1,
-                user_name: "Jack Pope"
+                user_name: "محمود فرح"
               },
               body:
-                "Can we have a music change for this final section that transitions towards the final frame? Some sweet heavy rock 80s ballad?"
+              "النص هنا  النص هنا  النص هنا  هنا ",
+              
             }
           ]
         },
@@ -121,10 +154,31 @@
               meta: {
                 datetime: "2017-03-28T19:21:41.351Z",
                 user_id: 2,
-                user_name: "Evan Carothers"
+                user_name: "محمود فرح"
               },
               body:
-                "The music is a little loud through this section and distracts from the content and narration a bit - can we tone 'er down a couple nocks here?"
+              "النص هنا  النص هنا  هنا هنا هنا هنا هنا  هنا هنا هنا هنا هنا هنا ",
+              test:"محمد علاء",
+              reply: [
+                  {
+                    id: "e0b9787b-fbe7-f1e9-5134-d0eb69a7Ere4aa",
+                    meta: {
+                        datetime: "2017-03-28T19:21:41.351Z",
+                        user_id: 2,
+                        user_name: "علي"
+                    },   
+                    body: "النص هنا  النص هنا  النص هنا النص هنا النص هنا النص هنا النص هنا النص هنا النص هنا النص هنا النص هنا ",
+                  },
+                  {
+                    id: "e0b9787b-fbe7-f1e9-5134-d0eb69a7Ere4aa",
+                    meta: {
+                        datetime: "2017-03-28T19:21:41.351Z",
+                        user_id: 2,
+                        user_name: "محمد علاء"
+                    },   
+                    body: "النص هنا  النص هنا  النص هنا النص هنا النص هنا النص هنا النص هنا النص هنا النص هنا النص هنا النص هنا ",
+                  },
+              ]
             }
           ]
         }
@@ -132,6 +186,13 @@
     </script>
   </head>
   <body>
+    <div class="User">
+        <form id="submit_form">
+            <input type='text' placeholder="ادخل اسم المستخدم"/>
+            <input type='submit' value='حفظ'/>
+        </form> 
+
+    </div>
     <div id="video_wrap">
       <!-- <div>
         <button onclick="ADD()" style="margin-top:20px">+ ADD VIDEO</button>
@@ -142,24 +203,33 @@
     <script src="/video.js/dist/video.min.js"></script>
     <script src="/videojs-annotation-comments.js"></script>
     <script>
-      //window.VAC_DEBUG = true;
-
-      var videos = [],
-        playerOptions = { controlBar: { volumePanel: { inline: false } } },
-        pluginOptions = {
-          annotationsObjects: annotations,
-          bindArrowKeys: true,
-          meta: {
-            user_id: 2,
-            user_name: "محمود فرح"
-          },
-          showControls: true,
-          showCommentList: true,
-          showFullScreen: true,
-          startInAnnotationMode: false,
-          showMarkerShapeAndTooltips: true
-        };
-
+        // Submit Form
+        let Username='';
+        $('#submit_form').on('submit', (e)=>{
+            e.preventDefault();
+            console.log(e.target[0].value)
+            if(e.target[0].value){
+                Username = e.target[0].value;
+                playerOptions = { controlBar: { volumePanel: { inline: false } } },
+                pluginOptions = {
+                annotationsObjects: annotations,
+                bindArrowKeys: true,
+                meta: {
+                    user_id: 2,
+                    user_name: e.target[0].value
+                },
+                showControls: true,
+                showCommentList: true,
+                showFullScreen: true,
+                startInAnnotationMode: false,
+                showMarkerShapeAndTooltips: true
+                };
+                $('.User').addClass('hide-from')
+                ADD();
+            }
+        })
+        // End Submit Form 
+      //window.VAC_DEBUG = true;    
       function ADD() {
         var id = new Date().getTime();
 
@@ -213,7 +283,7 @@
       }
 
       // Add initial video
-      ADD();
+      
     </script>
   </body>
 </html>

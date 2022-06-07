@@ -12,17 +12,63 @@ $ui-class-hidden: ".vac-hidden";
 $ui-class-active: ".vac-active";
 $ui-class-play-disabled: ".vac-disable-play";
 
+
 // NOTES
 // Videojs standard elements are prefixed with 'vjs-'*
 // Elements added by videojs-annotation-comments are prefixed with 'vac-'*
 body{
     direction: rtl;
     overflow-x: hidden;
+    
 }
+.User{
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 222;
+    overflow: hidden;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'IBMPlexRegular', sans-serif;
+    &.hide-from{
+        display: none !important;
+    }
+    input[type="text"] {
+        height: 40px;        
+        padding: 0;
+        width: 260px;
+        margin: 0;
+        background: #f6f6f6;
+        border: none;
+        border-radius: 5px;
+        padding: 0 15px;
+    }
+    input[type="submit"]{
+        height: 37px;        
+        padding: 0 30px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        background: #000;
+        cursor: pointer;
+    }
+}
+@media (max-width: "767px"){
+    input[type="text"] {       
+        width: 95% !important;        
+    }
+}
+
 // Scope to video-js player element
 .video-js{
     display: grid;
     background-color: transparent;
+    font-family: 'IBMPlexRegular', sans-serif;
 
 	// Applied when annotations are toggled 'on'
 	&#{$ui-class-active}{
@@ -91,7 +137,8 @@ body{
 	}
 
 	// Standard button class
-	.vac-button {
+	.vac-button,
+    .vac-button-replay {
 		transition: all .2s ease-in-out;
 		margin:10px;
 		line-height: 27px;
@@ -129,7 +176,8 @@ body{
 
 	// Wrapper class for control elements displayed during 'add new annotation' final step,
 	// where 'write comment' box is displayed AND when adding a new comment to an existing annotation
-	.vac-video-write-new-wrap{
+	.vac-video-write-new-wrap,
+    .vac-video-write-new-wrap-replay{
 		position: relative;
 		top: 0;
 		left: 0;
@@ -137,13 +185,15 @@ body{
 		height: 100%;
 		z-index: 11;
 		background-color: rgba($black, .7);
-		&.vac-new-comment{
+		&.vac-new-comment,
+        &.vac-new-commen-replay{
 			background-color: #f5f5f5;
             height: auto;
             order: 1000;
             margin-top: -13px;
 		}
-		.vac-video-write-new {
+		.vac-video-write-new,
+        .vac-video-write-new-replay{
 			width: 100%;
 			height: 100%;
 			display: flex;
@@ -163,7 +213,8 @@ body{
   				}
   			}
   			// Wrapper div around textarea and save/cancel controls
-			.vac-comment-showbox{
+			.vac-comment-showbox,
+            .vac-comment-replay-showbox{
 				border-radius: 1px;
 				background-color: white;
 				margin-top: 20px;
@@ -208,6 +259,9 @@ body{
 					}
   				}
   			}
+            .vac-comment-replay-showbox{
+                padding:0;
+            }
   			&.vac-is-comment{
   				display:block;
                   padding: 20px;
@@ -246,6 +300,7 @@ body{
 		width: 150px;
 		display: none;
 		text-align: center;
+        font-family: 'IBMPlexRegular', sans-serif;
 		// Subtext
 		i{
 			color: $medGray;
@@ -267,6 +322,7 @@ body{
 			color: white;
 			display: block;
 			cursor: pointer;
+            font-family: 'IBMPlexRegular', sans-serif;
 			&:hover{
 				background-color: lighten($primaryColor, 15%);
 			}
@@ -452,7 +508,7 @@ body{
 						border-radius: 1px;
 						background: rgba($black, .8);
 						color: white;
-						font-family: Arial;
+						font-family: 'IBMPlexRegular', sans-serif;
 						font-size: 12px;
 						left:0px;
 						&.vac-right-side{
@@ -479,6 +535,7 @@ body{
 
 	// Container element for comments in a displayed annotation
 	.vac-comments-container {
+
 		position: relative;
 	    right: 0;
 	    top: 0;
@@ -497,6 +554,28 @@ body{
         border-bottom-right-radius: 0;
         border: none;
         padding-bottom: 40px;
+
+        .count-comment{
+            color:#000;
+            font-family: 'IBMPlexRegular', sans-serif;
+            text-align: right;
+            padding: 5px 20px;
+            font-size: 13px;
+            letter-spacing: 0.5px;            
+            color: #333;
+            margin-bottom: 0;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            p{
+                display: inline-block;                
+                flex: 1;
+            }
+            span{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
 		// When hovering over or interacting with comments list, toggle opacity and slide out
 		&:hover, &#{$ui-class-active}{
 			// width: 60%;
@@ -538,15 +617,21 @@ body{
 			.vac-comment {
                 position: relative;                
                 margin: 20px 8px;
-
-                &::after{
-                    content: "";
-                    height: 65%;
-                    width: 2px;
-                    background: #333;
-                    position: absolute;
-                    right: -1px;
-                    top: 7px;
+                padding-top: 0px;
+                margin-top: 0;
+                .reply{
+                    margin: 0 10px;
+                    border-right: 2px dashed #dcdcdc;
+                    padding: 0 10px;
+                    display: none;
+                    .vac-comment-body{
+                        &::after{
+                            display: none;
+                        }
+                    }
+                    &.show{
+                        display: block !important;
+                    }
                 }
 				// Header of comment containing user name & timestamp
 				.vac-comment-header {
@@ -568,7 +653,8 @@ body{
                             position: relative;
 							white-space: nowrap;
 							text-overflow: ellipsis;
-                            color: $black
+                            color: $black;
+                            font-family: 'IBMPlex', sans-serif;
                                                         
 						}
 						&.vac-timestamp {
@@ -580,6 +666,7 @@ body{
                             font-weight: 500;
                             font-size: 10px;
                             color: #959595;
+                            font-family: 'IBMPlexRegular', sans-serif;
                         }
                         .box-del{
                             font-size: 22px;
@@ -621,12 +708,42 @@ body{
 					padding: 8px;
 					box-sizing: border-box;
 					margin-bottom:10px;					
-					font-size: 13px;
+					font-size: 12px;
 					line-height: 16px;
 					text-align: right;
                     color: #959595;
                     padding-bottom: 30px;    
                     border-bottom: 1px solid #e5e5e5;
+                    position: relative;
+                    &::after{
+                        content: "";
+                        height: 80%;
+                        width: 2px;
+                        background: #333;
+                        position: absolute;
+                        right: -1px;
+                        top: -13px;
+                    }
+                    .reply-text{
+                        color:#000;
+                        .hidden-reply{
+                            display: none;
+                        }
+                        .show-reply{
+                            display: inline-block ;
+                        }
+                        &.show-reply{
+                            i::before{
+                                content: "\f0de";
+                            }
+                            .hidden-reply{
+                                display: inline-block !important;
+                            }
+                            .show-reply{
+                                display: none !important;
+                            }
+                        }
+                    }
                     .action-comment{
                         padding: 12px 0 ;
                         .vac-like-comment,

@@ -1,4 +1,13 @@
 <div class="vac-comments-container">
+    <div class="count-comment">
+        <p> 
+            {{commentsHTML.length}}
+            تعليق
+        </p>
+        <span>
+            {{rangeStr}}
+        </span>
+    </div>
   <div class="vac-comments-wrap">
     {{#each commentsHTML as |comment|}}
     {{{comment}}}

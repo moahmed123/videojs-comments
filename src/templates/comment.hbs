@@ -1,32 +1,63 @@
 <div class="vac-comment" data-id="{{id}}">
-  <div class="vac-comment-header">
-    <div class="vac-author-name">
-        {{meta.user_name}} 
-        <span>
-            {{timeSince}}            
-            {{!-- <div class="vac-timestamp">
-                <span class="vac-delete-comment">&nbsp;&nbsp;X</span>
-            </div> --}}
-        </span>        
-        <span class="box-del">...</span>
+    <div class="vac-comment-header">
+        <div class="vac-author-name">
+            {{meta.user_name}}
+            <span>
+                {{timeSince}}
+                {{!-- <div class="vac-timestamp">
+                    <span class="vac-delete-comment">&nbsp;&nbsp;X</span>
+                </div> --}}
+            </span>
+            <span class="box-del">...</span>
             <div class="handle-box">
                 <span class="vac-delete-comment">حذف</span>
                 <span class="vac-edit-comment">تعديل</span>
             </div>
-    </div>        
-  </div>
-  <div class="vac-comment-body">
-    {{breaklines body}}
-    <div class="action-comment">
-        <span class="vac-like-comment">
-            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 0
-        </span>
-        <span class="vac-reply-comment">
-            <i class="fa fa-reply" aria-hidden="true"></i>رد
-        </span>
-        
-
+        </div>
     </div>
-  </div>
-  
+    <div class="vac-comment-body">
+        {{breaklines body}}        
+        <div class="action-comment">
+            <span class="vac-reply-comment">
+                <i class="fa fa-reply" aria-hidden="true"></i>رد             
+            </span>
+        </div>
+         <div class="action-comment">
+            <span class="vac-reply-comment reply-text">
+                <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                <span class="show-reply">عرض</span>
+                <span class="hidden-reply">اخفاء</span>
+                
+                <span>
+                     {{reply.length}}
+                </span>
+                ردود
+            </span>
+        </div>       
+    </div>
+     <!-- reply -->              
+        <div class="reply">
+            {{#each reply}}            
+                <div class="vac-comment-header">
+                    <div class="vac-author-name">
+                        {{{meta.user_name}}}                       
+                    </div>
+                </div>  
+                <div class="vac-comment-body">
+                    {{breaklines body}} 
+                </div>                     
+            {{/each}}
+            <div class="vac-video-write-new-wrap-replay vac-new-commen-replay">
+                <div class="vac-video-write-new-replay vac-is-comment-replay">
+                    <div class="vac-comment-replay-showbox">
+                        <textarea placeholder="اكتب رد هنا"></textarea>
+                        <div>
+                            <button class="vac-button-replay">حفظ</button>                        
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div> 
+        <!-- End Reply -->                
+
 </div>

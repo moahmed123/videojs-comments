@@ -2,9 +2,54 @@ body {
   direction: rtl;
   overflow-x: hidden; }
 
+.User {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 222;
+  overflow: hidden;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: 'IBMPlexRegular', sans-serif; }
+  .User.hide-from {
+    display: none !important; }
+  .User input[type="text"] {
+    height: 40px;
+    padding: 0;
+    width: 260px;
+    margin: 0;
+    background: #f6f6f6;
+    border: none;
+    border-radius: 5px;
+    padding: 0 15px; }
+  .User input[type="submit"] {
+    height: 37px;
+    padding: 0 30px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background: #000;
+    cursor: pointer; }
+
+@media (max-width: 767px) {
+  input[type="text"] {
+    width: 95% !important; } }
+
 .video-js {
   display: grid;
-  background-color: transparent; }
+  background-color: transparent;
+  font-family: 'IBMPlexRegular', sans-serif; }
   .video-js.vac-active .vjs-mouse-display, .video-js.vac-active .vjs-big-play-button {
     display: none !important; }
   .video-js.vac-active .vac-marker-owrap, .video-js.vac-active .vac-control {
@@ -31,7 +76,8 @@ body {
     display: none !important; }
   .video-js.vac-disable-play .vjs-play-control, .video-js.vac-disable-play .vjs-play-progress {
     visibility: hidden !important; }
-  .video-js .vac-button {
+  .video-js .vac-button,
+  .video-js .vac-button-replay {
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     margin: 10px;
@@ -45,7 +91,8 @@ body {
     color: white;
     display: block;
     cursor: pointer; }
-    .video-js .vac-button:hover {
+    .video-js .vac-button:hover,
+    .video-js .vac-button-replay:hover {
       background-color: #262626; }
   .video-js .vac-video-cover {
     z-index: 1;
@@ -60,7 +107,8 @@ body {
       width: 100%;
       height: 100%;
       position: relative; }
-  .video-js .vac-video-write-new-wrap {
+  .video-js .vac-video-write-new-wrap,
+  .video-js .vac-video-write-new-wrap-replay {
     position: relative;
     top: 0;
     left: 0;
@@ -68,14 +116,19 @@ body {
     height: 100%;
     z-index: 11;
     background-color: rgba(0, 0, 0, 0.7); }
-    .video-js .vac-video-write-new-wrap.vac-new-comment {
+    .video-js .vac-video-write-new-wrap.vac-new-comment, .video-js .vac-video-write-new-wrap.vac-new-commen-replay,
+    .video-js .vac-video-write-new-wrap-replay.vac-new-comment,
+    .video-js .vac-video-write-new-wrap-replay.vac-new-commen-replay {
       background-color: #f5f5f5;
       height: auto;
       -webkit-box-ordinal-group: 1001;
       -ms-flex-order: 1000;
       order: 1000;
       margin-top: -13px; }
-    .video-js .vac-video-write-new-wrap .vac-video-write-new {
+    .video-js .vac-video-write-new-wrap .vac-video-write-new,
+    .video-js .vac-video-write-new-wrap .vac-video-write-new-replay,
+    .video-js .vac-video-write-new-wrap-replay .vac-video-write-new,
+    .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay {
       width: 100%;
       height: 100%;
       display: -webkit-box;
@@ -87,25 +140,45 @@ body {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; }
-      .video-js .vac-video-write-new-wrap .vac-video-write-new > div {
+      .video-js .vac-video-write-new-wrap .vac-video-write-new > div,
+      .video-js .vac-video-write-new-wrap .vac-video-write-new-replay > div,
+      .video-js .vac-video-write-new-wrap-replay .vac-video-write-new > div,
+      .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay > div {
         width: 100%;
         border-radius: 2px;
         background: #F6F5F3;
         padding: 20px; }
-        .video-js .vac-video-write-new-wrap .vac-video-write-new > div h5 {
+        .video-js .vac-video-write-new-wrap .vac-video-write-new > div h5,
+        .video-js .vac-video-write-new-wrap .vac-video-write-new-replay > div h5,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new > div h5,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay > div h5 {
           margin: 0;
           padding: 0;
           font-size: 13px;
           color: #000;
           font-weight: normal; }
-      .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox {
+      .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox,
+      .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-replay-showbox,
+      .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-showbox,
+      .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-replay-showbox,
+      .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-showbox,
+      .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-replay-showbox,
+      .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-showbox,
+      .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-replay-showbox {
         border-radius: 1px;
         background-color: white;
         margin-top: 20px;
         width: 100%;
         border: 1px solid #c8c8c8;
         overflow: hidden; }
-        .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox textarea {
+        .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox textarea,
+        .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-replay-showbox textarea,
+        .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-showbox textarea,
+        .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-replay-showbox textarea,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-showbox textarea,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-replay-showbox textarea,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-showbox textarea,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-replay-showbox textarea {
           border: none;
           font-size: 13px;
           color: #383838;
@@ -116,17 +189,38 @@ body {
           min-height: 50px;
           width: 100%;
           resize: none; }
-        .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox > div {
+        .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox > div,
+        .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-replay-showbox > div,
+        .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-showbox > div,
+        .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-replay-showbox > div,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-showbox > div,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-replay-showbox > div,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-showbox > div,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-replay-showbox > div {
           padding: 10px;
           -webkit-box-sizing: content-box;
           box-sizing: content-box;
           height: 27px; }
-          .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox > div button {
+          .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox > div button,
+          .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-replay-showbox > div button,
+          .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-showbox > div button,
+          .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-replay-showbox > div button,
+          .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-showbox > div button,
+          .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-replay-showbox > div button,
+          .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-showbox > div button,
+          .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-replay-showbox > div button {
             float: left;
             width: auto;
             padding: 1px 20px;
             margin: 0; }
-          .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox > div a {
+          .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox > div a,
+          .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-replay-showbox > div a,
+          .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-showbox > div a,
+          .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-replay-showbox > div a,
+          .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-showbox > div a,
+          .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-replay-showbox > div a,
+          .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-showbox > div a,
+          .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-replay-showbox > div a {
             float: right;
             font-size: 12px;
             text-decoration: underline;
@@ -135,12 +229,30 @@ body {
             color: #383838;
             cursor: pointer;
             margin-right: 20px; }
-            .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox > div a:hover {
+            .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-showbox > div a:hover,
+            .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-replay-showbox > div a:hover,
+            .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-showbox > div a:hover,
+            .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-replay-showbox > div a:hover,
+            .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-showbox > div a:hover,
+            .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-replay-showbox > div a:hover,
+            .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-showbox > div a:hover,
+            .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-replay-showbox > div a:hover {
               color: #FF0000; }
-      .video-js .vac-video-write-new-wrap .vac-video-write-new.vac-is-comment {
+      .video-js .vac-video-write-new-wrap .vac-video-write-new .vac-comment-replay-showbox,
+      .video-js .vac-video-write-new-wrap .vac-video-write-new-replay .vac-comment-replay-showbox,
+      .video-js .vac-video-write-new-wrap-replay .vac-video-write-new .vac-comment-replay-showbox,
+      .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay .vac-comment-replay-showbox {
+        padding: 0; }
+      .video-js .vac-video-write-new-wrap .vac-video-write-new.vac-is-comment,
+      .video-js .vac-video-write-new-wrap .vac-video-write-new-replay.vac-is-comment,
+      .video-js .vac-video-write-new-wrap-replay .vac-video-write-new.vac-is-comment,
+      .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay.vac-is-comment {
         display: block;
         padding: 20px; }
-        .video-js .vac-video-write-new-wrap .vac-video-write-new.vac-is-comment .vac-comment-showbox {
+        .video-js .vac-video-write-new-wrap .vac-video-write-new.vac-is-comment .vac-comment-showbox,
+        .video-js .vac-video-write-new-wrap .vac-video-write-new-replay.vac-is-comment .vac-comment-showbox,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new.vac-is-comment .vac-comment-showbox,
+        .video-js .vac-video-write-new-wrap-replay .vac-video-write-new-replay.vac-is-comment .vac-comment-showbox {
           position: relative;
           padding: 0;
           margin: 0;
@@ -164,7 +276,8 @@ body {
     color: white;
     width: 150px;
     display: none;
-    text-align: center; }
+    text-align: center;
+    font-family: 'IBMPlexRegular', sans-serif; }
     .video-js .vac-controls i, .video-js .vac-add-controls i {
       color: #dbdcdc;
       font-size: 11px;
@@ -184,7 +297,8 @@ body {
       background: #00A6C2;
       color: white;
       display: block;
-      cursor: pointer; }
+      cursor: pointer;
+      font-family: 'IBMPlexRegular', sans-serif; }
       .video-js .vac-controls button:hover, .video-js .vac-add-controls button:hover {
         background-color: #10dcff; }
     .video-js .vac-controls.vac-add-controls button, .video-js .vac-add-controls.vac-add-controls button {
@@ -333,7 +447,7 @@ body {
             border-radius: 1px;
             background: rgba(0, 0, 0, 0.8);
             color: white;
-            font-family: Arial;
+            font-family: 'IBMPlexRegular', sans-serif;
             font-size: 12px;
             left: 0px; }
             .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker > div span b, .video-js .vac-marker-owrap .vac-marker-wrap .vac-marker-draggable > div span b {
@@ -369,6 +483,34 @@ body {
     border-bottom-right-radius: 0;
     border: none;
     padding-bottom: 40px; }
+    .video-js .vac-comments-container .count-comment {
+      color: #000;
+      font-family: 'IBMPlexRegular', sans-serif;
+      text-align: right;
+      padding: 5px 20px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      color: #333;
+      margin-bottom: 0;
+      border-bottom: 1px solid #e5e5e5;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .video-js .vac-comments-container .count-comment p {
+        display: inline-block;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1; }
+      .video-js .vac-comments-container .count-comment span {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
     .video-js .vac-comments-container:hover .vac-comments-wrap, .video-js .vac-comments-container.vac-active .vac-comments-wrap {
       opacity: 1; }
     .video-js .vac-comments-container:hover.vac-active .vac-reply-btn, .video-js .vac-comments-container.vac-active.vac-active .vac-reply-btn {
@@ -389,15 +531,18 @@ body {
         background-color: #383838; }
       .video-js .vac-comments-container .vac-comments-wrap .vac-comment {
         position: relative;
-        margin: 20px 8px; }
-        .video-js .vac-comments-container .vac-comments-wrap .vac-comment::after {
-          content: "";
-          height: 65%;
-          width: 2px;
-          background: #333;
-          position: absolute;
-          right: -1px;
-          top: 7px; }
+        margin: 20px 8px;
+        padding-top: 0px;
+        margin-top: 0; }
+        .video-js .vac-comments-container .vac-comments-wrap .vac-comment .reply {
+          margin: 0 10px;
+          border-right: 2px dashed #dcdcdc;
+          padding: 0 10px;
+          display: none; }
+          .video-js .vac-comments-container .vac-comments-wrap .vac-comment .reply .vac-comment-body::after {
+            display: none; }
+          .video-js .vac-comments-container .vac-comments-wrap .vac-comment .reply.show {
+            display: block !important; }
         .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-header {
           width: 100%;
           padding: 2px 5px;
@@ -413,7 +558,8 @@ body {
               position: relative;
               white-space: nowrap;
               text-overflow: ellipsis;
-              color: #000; }
+              color: #000;
+              font-family: 'IBMPlex', sans-serif; }
             .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-header .vac-author-name.vac-timestamp, .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-header .vac-timestamp.vac-timestamp {
               float: right;
               text-align: right;
@@ -421,7 +567,8 @@ body {
             .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-header .vac-author-name span, .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-header .vac-timestamp span {
               font-weight: 500;
               font-size: 10px;
-              color: #959595; }
+              color: #959595;
+              font-family: 'IBMPlexRegular', sans-serif; }
             .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-header .vac-author-name .box-del, .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-header .vac-timestamp .box-del {
               font-size: 22px;
               color: #000;
@@ -453,12 +600,33 @@ body {
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
           margin-bottom: 10px;
-          font-size: 13px;
+          font-size: 12px;
           line-height: 16px;
           text-align: right;
           color: #959595;
           padding-bottom: 30px;
-          border-bottom: 1px solid #e5e5e5; }
+          border-bottom: 1px solid #e5e5e5;
+          position: relative; }
+          .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-body::after {
+            content: "";
+            height: 80%;
+            width: 2px;
+            background: #333;
+            position: absolute;
+            right: -1px;
+            top: -13px; }
+          .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-body .reply-text {
+            color: #000; }
+            .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-body .reply-text .hidden-reply {
+              display: none; }
+            .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-body .reply-text .show-reply {
+              display: inline-block; }
+            .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-body .reply-text.show-reply i::before {
+              content: "\f0de"; }
+            .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-body .reply-text.show-reply .hidden-reply {
+              display: inline-block !important; }
+            .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-body .reply-text.show-reply .show-reply {
+              display: none !important; }
           .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-body .action-comment {
             padding: 12px 0; }
             .video-js .vac-comments-container .vac-comments-wrap .vac-comment .vac-comment-body .action-comment .vac-like-comment,
