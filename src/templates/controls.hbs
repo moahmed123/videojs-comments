@@ -1,7 +1,10 @@
 {{#unless adding}}
 {{#if showControls}}
 <div class="vac-controls vac-control">
-    <button class="vac-button">+ اضف تعليق</button>
+    <button class="vac-button video-hover">
+        <i class="fa fa-plus-square" aria-hidden="true"></i>
+        اضافة تعليق
+    </button>
     <!--
     {{#if showNav}}
     <div class="vac-annotation-nav">
@@ -25,7 +28,7 @@
     <i>حدد الشكل + النطاق</i>
     {{#if internalCommenting}}
     <button class="vac-button">استمر</button>
-    <a>cancel</a>
+    <a><i class="fa fa-times" aria-hidden="true"></i></a>
     {{/if}}
     <div class="vac-video-move">
         <div class="vac-a-prev">-1 ثانية</div>

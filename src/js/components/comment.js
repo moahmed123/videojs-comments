@@ -48,7 +48,15 @@ module.exports = class Comment extends PlayerUIComponent {
 
   // Return time since comment timestamp
   timeSince() {
-    return moment(this.meta.datetime).fromNow();
+     moment().locale('ar');
+     
+     const number = moment(this.meta.datetime).fromNow().replace(/\D/g, '');
+     const text = moment(this.meta.datetime).fromNow().replace(/[0-9]/g, '').replace("years ago", " سنوات")
+     .replace('months ago',"أشهر").replace('a few seconds ago',"ثواني").replace('a day ago',"يوم").replace('days ago',"يوم").replace('in minutes',"ثانيه")
+     const final = `منذ ${number} ${text}`;
+    
+    return final
+    // return moment(this.meta.datetime).fromNow()
   }
 
   teardown(destroy = false) {
