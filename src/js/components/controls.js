@@ -122,7 +122,7 @@ module.exports = class Controls extends PlayerUIComponent {
   }
 
   // User clicked 'add' button in the controls - setup UI and marker
-  startAddNew() {
+  startAddNew() {      
     if (!this.plugin.active) this.plugin.toggleAnnotationMode();
 
     this.player.pause();
@@ -141,7 +141,9 @@ module.exports = class Controls extends PlayerUIComponent {
     // show cursor help text if controls are hidden
     if (!this.showControls) this.bindCursorTooltip();
 
-    this.plugin.fire('enteredAddingAnnotation', { range });
+    this.plugin.fire('enteredAddingAnnotation', { range }); 
+    // Remove Texteara 
+    $('.vac-video-write-new-wrap.vac-new-comment').remove();  
   }
 
   // User clicked 'next' action - show UI to write comment

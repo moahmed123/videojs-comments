@@ -7448,7 +7448,7 @@ exports["templates"]["controls"] = Handlebars.template({ "1": function _(contain
             return undefined;
         };
 
-        return (stack1 = lookupProperty(helpers, "if").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "showControls") : depth0, { "name": "if", "hash": {}, "fn": container.program(2, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 2, "column": 0 }, "end": { "line": 14, "column": 7 } } })) != null ? stack1 : "";
+        return (stack1 = lookupProperty(helpers, "if").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "showControls") : depth0, { "name": "if", "hash": {}, "fn": container.program(2, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 2, "column": 0 }, "end": { "line": 17, "column": 7 } } })) != null ? stack1 : "";
     }, "2": function _(container, depth0, helpers, partials, data) {
         var stack1,
             lookupProperty = container.lookupProperty || function (parent, propertyName) {
@@ -7458,7 +7458,7 @@ exports["templates"]["controls"] = Handlebars.template({ "1": function _(contain
             return undefined;
         };
 
-        return "<div class=\"vac-controls vac-control\">\n    <button class=\"vac-button\">+ اضف تعليق</button>\n    <!--\n" + ((stack1 = lookupProperty(helpers, "if").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "showNav") : depth0, { "name": "if", "hash": {}, "fn": container.program(3, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 6, "column": 4 }, "end": { "line": 11, "column": 11 } } })) != null ? stack1 : "") + "    -->\n</div>\n";
+        return "<div class=\"vac-controls vac-control\">\n    <button class=\"vac-button video-hover\">\n        <i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>\n        اضافة تعليق\n    </button>\n    <!--\n" + ((stack1 = lookupProperty(helpers, "if").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "showNav") : depth0, { "name": "if", "hash": {}, "fn": container.program(3, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 9, "column": 4 }, "end": { "line": 14, "column": 11 } } })) != null ? stack1 : "") + "    -->\n</div>\n";
     }, "3": function _(container, depth0, helpers, partials, data) {
         return "    <div class=\"vac-annotation-nav\">\n        <div class=\"vac-a-prev\">Prev</div>\n        <div class=\"vac-a-next\">Next</div>\n    </div>\n";
     }, "5": function _(container, depth0, helpers, partials, data) {
@@ -7471,7 +7471,7 @@ exports["templates"]["controls"] = Handlebars.template({ "1": function _(contain
             return undefined;
         };
 
-        return "<div class=\"vac-video-cover vac-control\">\n    <div class=\"vac-video-cover-canvas\">\n        <div class=\"vac-cursor-tool-tip vac-hidden\">انقر واسحب للتحديد</div>\n    </div>\n</div>\n" + ((stack1 = lookupProperty(helpers, "if").call(alias1, depth0 != null ? lookupProperty(depth0, "showControls") : depth0, { "name": "if", "hash": {}, "fn": container.program(6, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 23, "column": 0 }, "end": { "line": 35, "column": 7 } } })) != null ? stack1 : "") + "\n" + ((stack1 = lookupProperty(helpers, "if").call(alias1, depth0 != null ? lookupProperty(depth0, "writingComment") : depth0, { "name": "if", "hash": {}, "fn": container.program(9, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 37, "column": 0 }, "end": { "line": 52, "column": 7 } } })) != null ? stack1 : "");
+        return "<div class=\"vac-video-cover vac-control\">\n    <div class=\"vac-video-cover-canvas\">\n        <div class=\"vac-cursor-tool-tip vac-hidden\">انقر واسحب للتحديد</div>\n    </div>\n</div>\n" + ((stack1 = lookupProperty(helpers, "if").call(alias1, depth0 != null ? lookupProperty(depth0, "showControls") : depth0, { "name": "if", "hash": {}, "fn": container.program(6, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 26, "column": 0 }, "end": { "line": 38, "column": 7 } } })) != null ? stack1 : "") + "\n" + ((stack1 = lookupProperty(helpers, "if").call(alias1, depth0 != null ? lookupProperty(depth0, "writingComment") : depth0, { "name": "if", "hash": {}, "fn": container.program(9, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 40, "column": 0 }, "end": { "line": 55, "column": 7 } } })) != null ? stack1 : "");
     }, "6": function _(container, depth0, helpers, partials, data) {
         var stack1,
             lookupProperty = container.lookupProperty || function (parent, propertyName) {
@@ -7481,9 +7481,9 @@ exports["templates"]["controls"] = Handlebars.template({ "1": function _(contain
             return undefined;
         };
 
-        return "<div class=\"vac-add-controls vac-control\">\n    <i>حدد الشكل + النطاق</i>\n" + ((stack1 = lookupProperty(helpers, "if").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "internalCommenting") : depth0, { "name": "if", "hash": {}, "fn": container.program(7, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 26, "column": 4 }, "end": { "line": 29, "column": 11 } } })) != null ? stack1 : "") + "    <div class=\"vac-video-move\">\n        <div class=\"vac-a-prev\">-1 ثانية</div>\n        <div class=\"vac-a-next\">+1 ثانية</div>\n    </div>\n</div>\n";
+        return "<div class=\"vac-add-controls vac-control\">\n    <i>حدد الشكل + النطاق</i>\n" + ((stack1 = lookupProperty(helpers, "if").call(depth0 != null ? depth0 : container.nullContext || {}, depth0 != null ? lookupProperty(depth0, "internalCommenting") : depth0, { "name": "if", "hash": {}, "fn": container.program(7, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 29, "column": 4 }, "end": { "line": 32, "column": 11 } } })) != null ? stack1 : "") + "    <div class=\"vac-video-move\">\n        <div class=\"vac-a-prev\">-1 ثانية</div>\n        <div class=\"vac-a-next\">+1 ثانية</div>\n    </div>\n</div>\n";
     }, "7": function _(container, depth0, helpers, partials, data) {
-        return "    <button class=\"vac-button\">استمر</button>\n    <a>cancel</a>\n";
+        return "    <button class=\"vac-button\">استمر</button>\n    <a><i class=\"fa fa-times\" aria-hidden=\"true\"></i></a>\n";
     }, "9": function _(container, depth0, helpers, partials, data) {
         var helper,
             lookupProperty = container.lookupProperty || function (parent, propertyName) {
@@ -7493,7 +7493,7 @@ exports["templates"]["controls"] = Handlebars.template({ "1": function _(contain
             return undefined;
         };
 
-        return "<div class=\"vac-video-write-new-wrap vac-control\">\n    <div class=\"vac-video-write-new vac-is-annotation\">\n        <div>\n            <h5><b>تعليق توضيحي جديد</b> @ " + container.escapeExpression((helper = (helper = lookupProperty(helpers, "rangeStr") || (depth0 != null ? lookupProperty(depth0, "rangeStr") : depth0)) != null ? helper : container.hooks.helperMissing, typeof helper === "function" ? helper.call(depth0 != null ? depth0 : container.nullContext || {}, { "name": "rangeStr", "hash": {}, "data": data, "loc": { "start": { "line": 41, "column": 43 }, "end": { "line": 41, "column": 55 } } }) : helper)) + "</h5>\n            <div class=\"vac-comment-showbox\">\n                <textarea placeholder=\"اكتب هنا ...\"></textarea>\n                <div>\n                    <button class=\"vac-button\">حفظ</button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
+        return "<div class=\"vac-video-write-new-wrap vac-control\">\n    <div class=\"vac-video-write-new vac-is-annotation\">\n        <div>\n            <h5><b>تعليق توضيحي جديد</b> @ " + container.escapeExpression((helper = (helper = lookupProperty(helpers, "rangeStr") || (depth0 != null ? lookupProperty(depth0, "rangeStr") : depth0)) != null ? helper : container.hooks.helperMissing, typeof helper === "function" ? helper.call(depth0 != null ? depth0 : container.nullContext || {}, { "name": "rangeStr", "hash": {}, "data": data, "loc": { "start": { "line": 44, "column": 43 }, "end": { "line": 44, "column": 55 } } }) : helper)) + "</h5>\n            <div class=\"vac-comment-showbox\">\n                <textarea placeholder=\"اكتب هنا ...\"></textarea>\n                <div>\n                    <button class=\"vac-button\">حفظ</button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
     }, "compiler": [8, ">= 4.3.0"], "main": function main(container, depth0, helpers, partials, data) {
         var stack1,
             alias1 = depth0 != null ? depth0 : container.nullContext || {},
@@ -7504,7 +7504,7 @@ exports["templates"]["controls"] = Handlebars.template({ "1": function _(contain
             return undefined;
         };
 
-        return ((stack1 = lookupProperty(helpers, "unless").call(alias1, depth0 != null ? lookupProperty(depth0, "adding") : depth0, { "name": "unless", "hash": {}, "fn": container.program(1, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 1, "column": 0 }, "end": { "line": 15, "column": 11 } } })) != null ? stack1 : "") + "\n" + ((stack1 = lookupProperty(helpers, "if").call(alias1, depth0 != null ? lookupProperty(depth0, "adding") : depth0, { "name": "if", "hash": {}, "fn": container.program(5, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 17, "column": 0 }, "end": { "line": 53, "column": 7 } } })) != null ? stack1 : "");
+        return ((stack1 = lookupProperty(helpers, "unless").call(alias1, depth0 != null ? lookupProperty(depth0, "adding") : depth0, { "name": "unless", "hash": {}, "fn": container.program(1, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 1, "column": 0 }, "end": { "line": 18, "column": 11 } } })) != null ? stack1 : "") + "\n" + ((stack1 = lookupProperty(helpers, "if").call(alias1, depth0 != null ? lookupProperty(depth0, "adding") : depth0, { "name": "if", "hash": {}, "fn": container.program(5, data, 0), "inverse": container.noop, "data": data, "loc": { "start": { "line": 20, "column": 0 }, "end": { "line": 56, "column": 7 } } })) != null ? stack1 : "");
     }, "useData": true });
 exports["templates"]["draggable_marker"] = Handlebars.template({ "compiler": [8, ">= 4.3.0"], "main": function main(container, depth0, helpers, partials, data) {
         var helper,
@@ -8218,7 +8218,14 @@ module.exports = function (_PlayerUIComponent) {
   }, {
     key: 'timeSince',
     value: function timeSince() {
-      return moment(this.meta.datetime).fromNow();
+      moment().locale('ar');
+
+      var number = moment(this.meta.datetime).fromNow().replace(/\D/g, '');
+      var text = moment(this.meta.datetime).fromNow().replace(/[0-9]/g, '').replace("years ago", " سنوات").replace('months ago', "أشهر").replace('a few seconds ago', "ثواني").replace('a day ago', "يوم").replace('days ago', "يوم").replace('in minutes', "ثانيه");
+      var final = '\u0645\u0646\u0630 ' + number + ' ' + text;
+
+      return final;
+      // return moment(this.meta.datetime).fromNow()
     }
   }, {
     key: 'teardown',
@@ -8326,7 +8333,7 @@ module.exports = function (_PlayerUIComponent) {
       .on('click.vac-comment', '.vac-delete-annotation', this.handleDeleteAnnotationClick.bind(this)) // Delete annotation with main delete button
       .on('click.vac-comment', '.vac-delete-comment', this.destroyComment.bind(this)) // Delete comment with delete comment button
       .on('mousewheel.vac-comment DOMMouseScroll.vac-comment', '.vac-comments-wrap', this.disablePageScroll.bind(this)) // Prevent outer page scroll when scrolling inside of the CommentList UI      
-      .on('click.vac-comment', '.box-del', this.toggleToShow.bind(this)).on('click.vac-comment', '.vac-reply-comment', this.toggleToShowReply.bind(this));
+      .on('click.vac-comment', '.box-del', this.toggleToShow.bind(this)).on('click.vac-comment', '.vac-reply-comment', this.toggleToShowReply.bind(this)).on('click.vac-comment', '.vac-video-write-new-replay.vac-is-comment-replay button', this.saveNewCommentReply.bind(this)); // Save new comment with save button
     }
 
     // eslint-disable-next-line class-methods-use-this
@@ -8354,7 +8361,7 @@ module.exports = function (_PlayerUIComponent) {
     key: 'bindCommentFormEvents',
     value: function bindCommentFormEvents() {
       this.$newCommentForm.on('click.vac-comment', '.vac-add-controls a, .vac-video-write-new.vac-is-comment a', this.closeNewComment.bind(this)) // Cancel new comment creation with cancel link
-      .on('click.vac-comment', '.vac-video-write-new.vac-is-comment button', this.saveNewComment.bind(this)); // Save new comment with save button
+      .on('click.vac-comment', '.vac-video-write-new.vac-is-comment button', this.saveNewComment.bind(this)); // Save new comment with save button            
     }
 
     // Render CommentList UI with all comments using template
@@ -8409,9 +8416,18 @@ module.exports = function (_PlayerUIComponent) {
 
       var user_id = 1;
       var body = this.$UI.newCommentTextarea.val();
-
       if (!body) return; // empty comment - TODO add validation / err message
       this.createComment(body);
+    }
+
+    // eslint-disable-next-line class-methods-use-this
+
+  }, {
+    key: 'saveNewCommentReply',
+    value: function saveNewCommentReply(event) {
+      var valueReplyComment = $(event.currentTarget).parents('.vac-comment-replay-showbox').find('textarea').val();
+      // Prints: value of reply commnet
+      console.log('value of reply commnet =>', valueReplyComment);
     }
   }, {
     key: 'createComment',
@@ -8740,6 +8756,8 @@ module.exports = function (_PlayerUIComponent) {
       if (!this.showControls) this.bindCursorTooltip();
 
       this.plugin.fire('enteredAddingAnnotation', { range: range });
+      // Remove Texteara 
+      $('.vac-video-write-new-wrap.vac-new-comment').remove();
     }
 
     // User clicked 'next' action - show UI to write comment

@@ -51,6 +51,11 @@ module.exports = class CommentList extends PlayerUIComponent {
         '.vac-reply-comment', this.toggleToShowReply.bind(this)
        
       )
+      .on(
+        'click.vac-comment',
+        '.vac-video-write-new-replay.vac-is-comment-replay button',
+        this.saveNewCommentReply.bind(this)
+      ); // Save new comment with save button
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -79,8 +84,7 @@ module.exports = class CommentList extends PlayerUIComponent {
         'click.vac-comment',
         '.vac-video-write-new.vac-is-comment button',
         this.saveNewComment.bind(this)
-      ); // Save new comment with save button
-      
+      ); // Save new comment with save button            
   }
 
   // Render CommentList UI with all comments using template
@@ -125,10 +129,17 @@ module.exports = class CommentList extends PlayerUIComponent {
     this.$wrap.removeClass(this.UI_CLASSES.active);
 
     const user_id = 1;
-    const body = this.$UI.newCommentTextarea.val();
-
+    const body = this.$UI.newCommentTextarea.val();    
     if (!body) return; // empty comment - TODO add validation / err message
     this.createComment(body);
+    
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  saveNewCommentReply(event) {    
+    const valueReplyComment = $(event.currentTarget).parents('.vac-comment-replay-showbox').find('textarea').val();
+    // Prints: value of reply commnet
+    console.log('value of reply commnet =>', valueReplyComment)
   }
 
   createComment(body) {    

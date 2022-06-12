@@ -624,9 +624,7 @@ body{
             }
         }
 		// When hovering over or interacting with comments list, toggle opacity and slide out
-		&:hover, &#{$ui-class-active}{
-			// width: 60%;
-			// max-width: 480px;
+		&:hover, &#{$ui-class-active}{			
 			.vac-comments-wrap{
 				opacity: 1;
 			}
